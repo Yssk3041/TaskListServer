@@ -35,4 +35,16 @@ router.get('/:status', validarParametros, (req, res) =>{
     }
 });
 
+router.get("/:id/", (req, res) => {
+    const IdSeleccionado = req.params.id;
+    const taskSelected = tasks.filter(
+      (item) => item.id === Number(IdSeleccionado)
+    );
+    if (taskSelected) {
+      res.status(200).json(taskSelected);
+    } else {
+      res.status(404).send("Task not found");
+    }
+  });
+
 module.exports = router;
