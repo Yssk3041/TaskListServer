@@ -6,7 +6,4 @@ const validateMethod = (req, res, next) =>{
         next();
     }
 }
-
-  
-   
 module.exports = validateMethod;
